@@ -1,4 +1,4 @@
-import java.util.Random;
+//import java.util.Random;
 
 /**
  * Class implementing a bank account.
@@ -9,30 +9,81 @@ import java.util.Random;
  */
 public class BankAccount {
 
-    /*
-     * You may want to use this to distinguish between different kinds of accounts.
+    /**
+     * Distinguish between different kinds of accounts.
      */
     public enum BankAccountType {
+        /**
+         * checking account.
+         */
         CHECKINGS,
+        /**
+         * saving account.
+         */
         SAVINGS,
+        /**
+         * student account.
+         */
         STUDENT,
+        /**
+         * work place account.
+         */
         WORKPLACE
     }
-
+    /**
+     * The account number of this account.
+     */
     private int accountNumber;
-    public BankAccountType accountType;
+    /**
+     * The account type of this account.
+     */
+    private BankAccountType accountType;
+    /**
+     * The account balance of this account.
+     */
     private double accountBalance;
+    /**
+     * The owner's name of this account.
+     */
     private String ownerName;
-    public double interestRate;
+    /**
+     * The interest rate of this account.
+     */
+    private double interestRate;
+    /**
+     * The interest earned for this account.
+     */
     private double interestEarned;
-
+    /**
+     * Constructor that takes in the name of the owner and account type.
+     * @param name owner's name
+     * @param accountCategory the account type of this account
+     */
     public BankAccount(final String name, final BankAccountType accountCategory) {
-        /*
-         * Implement this function
-         */
+        ownerName = name;
+        accountType = accountCategory;
+        Bank.increseNumberOfAccount();
+    }
+    /**
+     * Getter for account balance.
+     * @return the current balance of this account
+     */
+    public double getBalance() {
+        return accountBalance;
+    }
+    /**
+     * Setter for account balance.
+     * @param newBalance the new balance for this account
+     */
+    public void setBalance(final double newBalance) {
+        this.accountBalance = newBalance;
+    }
+    /**
+     * Setter for owner's name.
+     * @param name new name
+     */
+    public void setName(final String name) {
+        this.ownerName = name;
     }
 
-    /*
-     * Implement getters and setters as appropriate for private variables.
-     */
 }
